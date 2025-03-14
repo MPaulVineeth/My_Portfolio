@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>M Paul Vineeth Kumar - Portfolio</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/portfolio.png">
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: '#121212',
+            'dark-lighter': '#1F1F1F',
+            primary: '#8b5cf6',
+            secondary: '#a78bfa',
+            accent: '#7c3aed'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'fadeIn': 'fadeIn 1s ease-out forwards',
+            'fadeInUp': 'fadeInUp 0.6s ease forwards',
+            'pulse': 'pulse 2s infinite',
+            'bounce': 'bounce 2s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+            },
+            fadeIn: {
+              from: { opacity: '0', transform: 'translateY(20px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              from: { opacity: '0', transform: 'translateY(30px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+            pulse: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.05)' },
+            },
+            bounce: {
+              '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+              '40%': { transform: 'translateY(-10px)' },
+              '60%': { transform: 'translateY(-5px)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet"/>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="bg-dark text-gray-100 font-sans">
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-black/90 z-[60] hidden flex-col justify-center items-center">
+  <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">
+    <i class="fas fa-times"></i>
+  </button>
+  <nav class="flex flex-col items-center space-y-6 text-xl">
+    <a class="mobile-nav-link" href="#home">Home</a>
+    <a class="mobile-nav-link" href="#about">About</a>
+    <a class="mobile-nav-link" href="#technical-skills">Skills</a>
+    <a class="mobile-nav-link" href="#projects">Projects</a>
+    <a class="mobile-nav-link" href="#internships">Internships</a>
+    <a class="mobile-nav-link" href="#certifications">Certifications</a>
+    <a class="mobile-nav-link" href="#achievements">Achievements</a>
+    <a class="mobile-nav-link" href="#education">Education</a>
+  </nav>
+  <div class="mt-12 flex items-center gap-6">
+    <a class="social-icon" href="https://www.linkedin.com/in/paul-vineeth-531336220/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a class="social-icon" href="https://github.com/MPaulVineeth" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a class="social-icon" href="https://mail.google.com/mail/?view=cm&to=mpaulvineeth2003@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="fixed w-full bg-dark/90 backdrop-blur-md border-b border-gray-800 z-50 transition-all duration-300 py-3">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between">
+      <!-- Name/Logo -->
+      <div class="text-xl font-bold gradient-text">M Paul Vineeth Kumar</div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="md:hidden text-2xl text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:block">
+        <div class="flex space-x-6">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#technical-skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#internships">Internships</a>
+          <a class="nav-link" href="#certifications">Certifications</a>
+          <a class="nav-link" href="#achievements">Achievements</a>
+          <a class="nav-link" href="#education">Education</a>
+        </div>
+      </nav>
+
+      <!-- Social Links - Desktop Only -->
+      <div class="hidden md:flex items-center gap-3">
+        <a class="social-icon" href="https://www.linkedin.com/in/paul-vineeth-531336220/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a class="social-icon" href="https://github.com/MPaulVineeth" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="social-icon" href="https://mail.google.com/mail/?view=cm&to=mpaulvineeth2003@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-dark to-dark" id="home">
+  <!-- Particle Background -->
+  <div id="tsparticles" class="absolute inset-0"></div>
+  
+  <!-- Content -->
+  <div class="relative z-10 text-center px-6" data-aos="fade-up" data-aos-duration="1000">
+    <div class="mb-6 mx-auto rounded-full overflow-hidden w-32 h-32 md:w-40 md:h-40 border-4 border-primary/30 shadow-lg shadow-primary/20">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero.jpg-3usOe1J6XZ9yYyuQlcKZJaOoPX1ggc.jpeg" alt="Paul Vineeth" class="w-full h-full object-cover">
+    </div>
+    <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight">
+      <span class="gradient-text">Hello, I'm Paul Vineeth</span>
+    </h1>
+    <p class="text-lg md:text-2xl text-gray-300 mb-8">
+      <span id="typewriter" class="inline-block"></span>
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <a href="#projects" class="cta-button">
+        View My Work
+      </a>
+      <a href="#contact" class="cta-button-secondary">
+        Contact Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating Elements -->
+  <div class="floating-element absolute top-1/4 left-1/4 w-12 h-12 opacity-20">
+    <i class="fas fa-code text-4xl text-violet-400"></i>
+  </div>
+  <div class="floating-element absolute bottom-1/4 right-1/4 w-12 h-12 opacity-20" style="animation-delay: 1s;">
+    <i class="fas fa-laptop-code text-4xl text-violet-400"></i>
+  </div>
+  <div class="floating-element absolute top-1/3 right-1/3 w-12 h-12 opacity-20" style="animation-delay: 2s;">
+    <i class="fas fa-database text-4xl text-violet-400"></i>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <a href="#about" class="text-gray-400 hover:text-white transition-colors">
+      <i class="fas fa-chevron-down text-2xl"></i>
+    </a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-20 bg-dark" id="about">
+  <div class="container mx-auto px-6 md:px-12 lg:px-20">
+    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Image Section with Hover Effect -->
+      <div class="relative flex justify-center" data-aos="fade-right" data-aos-delay="200">
+        <div class="profile-image-wrapper">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero.jpg-3usOe1J6XZ9yYyuQlcKZJaOoPX1ggc.jpeg" alt="Profile Image" 
+              class="w-full max-w-md md:max-w-lg lg:max-w-md rounded-lg shadow-2xl fade-effect"/>
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="space-y-6 text-center md:text-left max-w-xl mx-auto md:mx-0" data-aos="fade-left" data-aos-delay="300">
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+          I am a Computer Science Engineering student at VIT, Vellore, with a strong foundation in Full Stack Web Development, AI/ML, and database management. My journey includes hands-on experience in creating real-world applications and working with various technologies. I'm passionate about problem-solving and creating innovative solutions that make a difference.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+          <span class="px-4 py-2 bg-violet-500/20 text-violet-400 rounded-full text-sm font-medium animate-tag">Problem Solver</span>
+          <span class="px-4 py-2 bg-violet-500/20 text-violet-400 rounded-full text-sm font-medium animate-tag" style="animation-delay: 0.3s;">Full Stack Developer</span>
+          <span class="px-4 py-2 bg-violet-500/20 text-violet-400 rounded-full text-sm font-medium animate-tag" style="animation-delay: 0.6s;">AI/ML Enthusiast</span>
+        </div>
+        
+        <!-- Resume Download Button -->
+        <div class="pt-4">
+          <a href="https://drive.usercontent.google.com/u/0/uc?id=1rZBt204VRwSng-nR5IFoIB8hSdBerZWa&export=download" class="inline-flex items-center px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fas fa-download mr-2"></i> Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technical Skills Section -->
+<section class="py-24 bg-dark" id="technical-skills">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Programming Languages -->
+<div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+  <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+    <i class="fas fa-code text-violet-400 text-3xl mr-4"></i>
+    Programming Languages
+  </h3>
+  <div class="flex flex-wrap gap-6 text-lg font-medium">
+    <span class="flex items-center skill-item">
+      <i class="fab fa-java text-blue-400 text-xl mr-3"></i>Java
+    </span>
+    <span class="flex items-center skill-item">
+      <i class="fab fa-python text-yellow-400 text-xl mr-3"></i>Python
+    </span>
+    <span class="flex items-center skill-item">
+      <i class="devicon-c-plain text-blue-400 text-xl mr-3"></i>C
+    </span>
+    <span class="flex items-center skill-item">
+      <i class="devicon-cplusplus-plain text-blue-400 text-xl mr-3"></i>C++
+    </span>
+    <span class="flex items-center skill-item">
+      <i class="fab fa-js text-yellow-400 text-xl mr-3"></i>JavaScript
+    </span>
+  </div>
+</div>
+
+
+      <!-- Web Development -->
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+          <i class="fas fa-globe text-violet-400 text-3xl mr-4"></i>
+          Web Development
+        </h3>
+        <div class="flex flex-wrap gap-6 text-lg font-medium">
+          <span class="flex items-center skill-item"><i class="fab fa-html5 text-orange-400 text-xl mr-3"></i>HTML</span>
+          <span class="flex items-center skill-item"><i class="fab fa-css3-alt text-blue-400 text-xl mr-3"></i>CSS</span>
+          <span class="flex items-center skill-item"><i class="fab fa-bootstrap text-purple-400 text-xl mr-3"></i>Bootstrap</span>
+          <span class="flex items-center skill-item"><i class="fab fa-react text-blue-400 text-xl mr-3"></i>React</span>
+          <span class="flex items-center skill-item"><i class="fab fa-node-js text-green-400 text-xl mr-3"></i>Node.js</span>
+          <span class="flex items-center skill-item"><i class="fas fa-server text-green-400 text-xl mr-3"></i>Express.js</span>
+          <span class="flex items-center skill-item"><i class="fas fa-database text-green-400 text-xl mr-3"></i>MongoDB</span>
+        </div>
+      </div>
+
+      <!-- Developer Tools -->
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+          <i class="fas fa-tools text-violet-400 text-3xl mr-4"></i>
+          Developer Tools
+        </h3>
+        <div class="flex flex-wrap gap-6 text-lg font-medium">
+          <span class="flex items-center skill-item"><i class="fab fa-git-alt text-red-400 text-xl mr-3"></i>Git</span>
+          <span class="flex items-center skill-item"><i class="fab fa-github text-gray-400 text-xl mr-3"></i>GitHub</span>
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-6 h-6 mr-3" alt="VS Code Logo">VS Code</span>
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="w-6 h-6 mr-3" alt="Postman Logo">Postman</span>
+        </div>
+      </div>
+
+      <!-- AI/ML Tools -->
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+          <i class="fas fa-brain text-violet-400 text-3xl mr-4"></i>
+          AI/ML Tools
+        </h3>
+        <div class="flex flex-wrap gap-6 text-lg font-medium">
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-6 h-6 mr-3" alt="TensorFlow Logo">TensorFlow</span>
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="w-6 h-6 mr-3" alt="PyTorch Logo">PyTorch</span>
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" class="w-6 h-6 mr-3" alt="Scikit-learn Logo">Scikit-learn</span>
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="w-6 h-6 mr-3" alt="Pandas Logo">Pandas</span>
+          <span class="flex items-center skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="w-6 h-6 mr-3" alt="NumPy Logo">NumPy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+   
+<!-- Projects Section -->
+<section class="py-20 bg-dark" id="projects">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title" data-aos="fade-up">Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-grid">
+      
+      <!-- Event Management System -->
+      <div class="project-card flex flex-col" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-image-container">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P1.jpg-GkbzhiWX6VnT9A4xxDVMT2xBilzirS.jpeg" alt="Event Management System"
+            class="w-full h-48 object-cover rounded-lg" />
+          <div class="project-overlay">
+            <a href="https://event-management-system-app-d3ke.onrender.com/" target="_blank" class="project-view-btn">View Project</a>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3 mt-4">Event Management System</h3>
+        <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+          Developed a Node.js application with Express.js and MongoDB for database management. Implemented authentication using Passport.js with hashing, salting, and OAuth for secure user authentication.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express.js</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">Render</span>
+        </div>
+        <div class="mt-auto flex justify-between">
+          <a href="https://event-management-system-app-d3ke.onrender.com/" target="_blank" class="project-link">
+            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+          </a>
+          <a href="https://github.com/MPaulVineeth/Event-Management-System" target="_blank" class="project-link">
+            <i class="fab fa-github mr-2"></i> Source Code
+          </a>
+        </div>
+      </div>
+      
+      <!-- FCRS - Car Rental System -->
+      <div class="project-card flex flex-col" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-image-container">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P2.jpg-OMGgeWOquGWGDEHQKqzhNhSFZ24cQc.jpeg" alt="FCRS - Car Rental System"
+            class="w-full h-48 object-cover rounded-lg" />
+          <div class="project-overlay">
+            <a href="https://fcrs-e4mh.onrender.com/" target="_blank" class="project-view-btn">View Project</a>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3 mt-4">FCRS - Car Rental System</h3>
+        <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+          Developed a Python and JavaScript-based Car Rental System for seamless booking. Implemented secure authentication and role-based access for user management.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Pyrebase</span>
+          <span class="tech-badge">Render</span>
+        </div>
+        <div class="mt-auto flex justify-between">
+          <a href="https://fcrs-e4mh.onrender.com/" target="_blank" class="project-link">
+            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+          </a>
+          <a href="https://github.com/MPaulVineeth/FCRS-Car-Rental-System" target="_blank" class="project-link">
+            <i class="fab fa-github mr-2"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Weather Forecasting Application -->
+      <div class="project-card flex flex-col" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-image-container">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P3.jpg-lwCftjpkGqiFPrr5CQdiPazChcIs7X.jpeg" alt="Weather Forecasting Application"
+            class="w-full h-48 object-cover rounded-lg" />
+          <div class="project-overlay">
+            <a href="https://weather-forecasting-application-omega.vercel.app/" target="_blank" class="project-view-btn">View Project</a>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3 mt-4">Weather Forecasting Application</h3>
+        <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+          Built a JavaScript and Node.js-based Weather App for real-time weather updates. Integrated OpenWeather API for accurate location-based forecasts.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">OpenWeather API</span>
+          <span class="tech-badge">Vercel</span>
+        </div>
+        <div class="mt-auto flex justify-between">
+          <a href="https://weather-forecasting-application-omega.vercel.app/" target="_blank" class="project-link">
+            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+          </a>
+          <a href="https://github.com/MPaulVineeth/Weather_Forecasting_Application" target="_blank" class="project-link">
+            <i class="fab fa-github mr-2"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- View More Projects Button -->
+    <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
+      <a href="https://github.com/MPaulVineeth?tab=repositories" target="_blank" class="inline-flex items-center px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+        <i class="fab fa-github mr-2"></i> View More Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Internships Section -->
+<section class="py-24 bg-dark" id="internships">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title" data-aos="fade-up">Internships</h2>
+      
+    <div class="grid grid-cols-1 gap-8">
+      <!-- Ethnus Pvt Ltd -->
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex flex-col md:flex-row items-start md:space-x-4">
+          <!-- Image Logo -->
+          <div class="company-logo-container mb-4 md:mb-0">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/I1-ujsHNOR7rCdH611SfzyD4pMbF42shd.png" alt="Ethnus Logo" class="w-16 h-16 rounded-lg object-contain bg-white p-1"> 
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">
+              MERN Full Stack Internship Program - Ethnus Pvt Ltd
+            </h3>
+            <p class="text-sm text-violet-400 mb-3">August 2023 – November 2023</p>
+            <p class="text-gray-400 mb-4">
+              Analyzed browser interactions to resolve major usability issues, fixing three critical system crashes and improving platform stability. Designed and launched a Full-Stack Event Management System using MERN (MongoDB, Express.js, React, Node.js) for seamless event creation and management. Collaborated with cross-functional teams to integrate real-time event notifications and implement user management features, enhancing user engagement and the overall experience.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tech-badge">MERN Stack</span>
+              <span class="tech-badge">UI/UX</span>
+              <span class="tech-badge">System Architecture</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1guJ7uTugZOtpB84O04Rk1tuhB-pxQOfg/view" target="_blank" class="certificate-link">
+              View Certificate <i class="fas fa-certificate ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="py-24 bg-dark" id="certifications">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title">Certifications</h2>
+      
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Google Cloud Computing Foundations -->
+      <div class="certification-card">
+        <div class="flex flex-col md:flex-row items-start md:space-x-4">
+          <div class="cert-logo-container mb-4 md:mb-0">
+            <div class="p-3 bg-violet-500/20 rounded-lg">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" 
+                   class="w-10 h-10" 
+                   alt="Google Cloud Logo">
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Google Cloud Computing Foundations</h3>
+            <p class="text-sm text-violet-400 mb-2">December 2023</p>
+            <p class="text-gray-400 mb-4">Completed Google's comprehensive cloud computing program, gaining skills in GCP infrastructure, services, and solutions. Learned about cloud architecture, deployment models, and best practices for cloud-native applications.</p>
+            <a href="https://drive.google.com/file/d/1fJ0slUo9apVcvG8uxe97qEwnSsN5uF5o/view" class="certificate-link">
+              View Certificate <i class="fas fa-certificate ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python with AI and ML -->
+      <div class="certification-card">
+        <div class="flex flex-col md:flex-row items-start md:space-x-4">
+          <div class="cert-logo-container mb-4 md:mb-0">
+            <div class="p-3 bg-violet-500/20 rounded-lg">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+                   class="w-10 h-10" 
+                   alt="Python Logo">
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Python with AI and ML - INTERNX</h3>
+            <p class="text-sm text-violet-400 mb-2">July 2024</p>
+            <p class="text-gray-400 mb-4">Completed intensive training on Python programming with a focus on implementing AI and Machine Learning algorithms and techniques. Developed skills in data preprocessing, model training, and evaluation of machine learning models.</p>
+            <a href="https://drive.google.com/file/d/1Go8551j0_Xxtp7fviYmuLnQLzU07whV1/view" class="certificate-link">
+              View Certificate <i class="fas fa-certificate ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="py-24 bg-dark" id="achievements">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title" data-aos="fade-up">Achievements & Activities</h2>
+      
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Academic Achievements -->
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+          <i class="fas fa-award text-violet-400 text-2xl mr-3"></i>
+          Academic Achievements
+        </h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-trophy text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Achieved a rank of 10,787 in VITEEE 2021, competing among 250,000+ candidates</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-medal text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Maintained a CGPA of 8.07/10 throughout the engineering program</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-star text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Received academic excellence award for consistent performance</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sports Achievements -->
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+          <i class="fas fa-running text-violet-400 text-2xl mr-3"></i>
+          Sports Achievements
+        </h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-basketball-ball text-violet-400 mt-1"></i>
+            <span class="text-gray-300">School Basketball Team Captain</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-medal text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Runner-up in the district-level basketball tournament</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-trophy text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Participated in inter-college sports competitions</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Other Achievements -->
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+          <i class="fas fa-star text-violet-400 text-2xl mr-3"></i>
+          Other Achievements
+        </h3>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-microphone text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Won a school-level debate on "Parental Responsibility: Who Should Take Primary Care of a Child – Mother or Father?"</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-code text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Participated in multiple hackathons and coding competitions</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fas fa-users text-violet-400 mt-1"></i>
+            <span class="text-gray-300">Active member of the college's technical club</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hobbies & Interests -->
+      <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+          <i class="fas fa-heart text-violet-400 text-2xl mr-3"></i>
+          Hobbies & Interests
+        </h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="text-violet-400 font-semibold mb-2 flex items-center">
+              <i class="fas fa-gamepad text-violet-300 mr-2"></i> Games & Sports
+            </h4>
+            <p class="text-gray-300">Cricket, Basketball, Badminton, Chess, Monopoly, Chinese Checkers</p>
+          </div>
+          <div>
+            <h4 class="text-violet-400 font-semibold mb-2 flex items-center">
+              <i class="fas fa-paint-brush text-violet-300 mr-2"></i> Creative Interests
+            </h4>
+            <p class="text-gray-300">Editing and designing using AI tools, with a focus on digital content creation</p>
+          </div>
+          <div>
+            <h4 class="text-violet-400 font-semibold mb-2 flex items-center">
+              <i class="fas fa-plane text-violet-300 mr-2"></i> Travel & Entertainment
+            </h4>
+            <p class="text-gray-300">Passionate about exploring diverse cultures and new destinations, enthusiast of anime, movies, web series, and music</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="py-24 bg-dark" id="education">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title" data-aos="fade-up">Education</h2>
+    
+    <!-- Timeline View -->
+    <div class="relative max-w-4xl mx-auto mt-12 pb-12">
+      <!-- Timeline Line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-violet-500/30"></div>
+      
+      <!-- VIT -->
+      <div class="relative mb-16" data-aos="fade-right" data-aos-delay="100">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+            <h3 class="text-xl font-bold text-white mb-2">Vellore Institute of Technology</h3>
+            <p class="text-gray-400">Bachelor of Technology in Computer Science and Engineering</p>
+            <p class="text-violet-400 font-semibold mt-2">CGPA: 8.07/10</p>
+            <p class="text-sm text-gray-500">September 2021 - July 2025</p>
+          </div>
+          
+          <div class="md:w-1/2 md:pl-8 mt-8 md:mt-0">
+            <div class="bg-dark-lighter p-6 rounded-lg shadow-md border border-gray-800">
+              <p class="text-gray-300 leading-relaxed text-center md:text-left">Coursework includes Data Structures, Algorithms, Database Management Systems, Web Technologies, Machine Learning, and Software Engineering. Actively participating in technical clubs and hackathons.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Narayana Junior College -->
+      <div class="relative mb-16" data-aos="fade-left" data-aos-delay="200">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="order-1 md:order-2 md:w-1/2 md:pl-8 text-center md:text-left">
+            <h3 class="text-xl font-bold text-white mb-2">Narayana Junior College</h3>
+            <p class="text-gray-400">Higher Secondary</p>
+            <p class="text-violet-400 font-semibold mt-2">CGPA: 9.68/10</p>
+            <p class="text-sm text-gray-500">April 2020 - April 2021</p>
+          </div>
+ 
+          <div class="order-3 md:order-1 md:w-1/2 md:pr-8 mt-8 md:mt-0">
+            <div class="bg-dark-lighter p-6 rounded-lg shadow-md border border-gray-800">
+              <p class="text-gray-300 leading-relaxed text-center md:text-right">Focused on Mathematics, Physics, and Chemistry. Participated in various academic competitions and maintained excellent academic standing throughout.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- St. Joseph's English Medium School -->
+      <div class="relative" data-aos="fade-right" data-aos-delay="300">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+            <h3 class="text-xl font-bold text-white mb-2">St. Joseph's English Medium School</h3>
+            <p class="text-gray-400">Secondary</p>
+            <p class="text-violet-400 font-semibold mt-2">CGPA: 9.68/10</p>
+            <p class="text-sm text-gray-500">April 2018 - April 2019</p>
+          </div>
+
+          <div class="md:w-1/2 md:pl-8 mt-8 md:mt-0">
+            <div class="bg-dark-lighter p-6 rounded-lg shadow-md border border-gray-800">
+              <p class="text-gray-300 leading-relaxed text-center md:text-left">Received a well-rounded education with emphasis on academics, sports, and extracurricular activities. Served as basketball team captain and participated in various school events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-24 bg-dark" id="contact">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <!-- Contact Info -->
+      <div class="space-y-8" data-aos="fade-right" data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+        
+        <p class="text-gray-300 leading-relaxed">
+          I'm currently available for full-time positions and internship opportunities. If you have a project that needs some creative touch or if you're looking for a developer to join your team, feel free to reach out!
+        </p>
+        
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="bg-violet-500/20 p-3 rounded-full">
+              <i class="fas fa-envelope text-violet-400"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-medium">Email</h4>
+              <a href="mailto:mpaulvineeth2003@gmail.com" class="text-gray-400 hover:text-violet-400 transition-colors">mpaulvineeth2003@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="bg-violet-500/20 p-3 rounded-full">
+              <i class="fas fa-phone text-violet-400"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-medium">Phone</h4>
+              <a href="tel:+917995476533" class="text-gray-400 hover:text-violet-400 transition-colors">+91 7995476533</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="bg-violet-500/20 p-3 rounded-full">
+              <i class="fas fa-map-marker-alt text-violet-400"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-medium">Location</h4>
+              <p class="text-gray-400">Kurnool, Andhra Pradesh, India</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pt-4">
+          <h4 class="text-white font-medium mb-4">Connect With Me</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/in/paul-vineeth-531336220/" target="_blank" class="social-icon-large">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/MPaulVineeth" target="_blank" class="social-icon-large">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/paul_vineeth333" target="_blank"  class="social-icon-large">
+              <i class="fab">𝕏</i>
+            </a>
+            <a href="https://www.instagram.com/paul_vineeth_333/" target="_blank" class="social-icon-large">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+<div data-aos="fade-left" data-aos-delay="200">
+  <form action="https://formsubmit.co/mpaulvineeth2003@gmail.com" method="POST" class="bg-dark-lighter p-8 rounded-xl shadow-xl hover-up">
+    <!-- Name Input -->
+    <div class="mb-6">
+      <label for="name" class="block text-gray-300 mb-2 font-medium">Name</label>
+      <div class="relative">
+        <input 
+          type="text" id="name" name="name" required 
+          class="form-input"
+          placeholder="Your name"
+        />
+      </div>
+    </div>
+    <!-- Email Input -->
+    <div class="mb-6">
+      <label for="email" class="block text-gray-300 mb-2 font-medium">Email</label>
+      <div class="relative">
+        <input 
+          type="email" id="email" name="email" required 
+          class="form-input"
+          placeholder="your.email@example.com"
+        />
+      </div>
+    </div>
+    
+    <!-- Subject Input -->
+    <div class="mb-6">
+      <label for="subject" class="block text-gray-300 mb-2 font-medium">Subject</label>
+      <div class="relative">
+        <input 
+          type="text" id="subject" name="_subject" required 
+          class="form-input"
+          placeholder="What is this regarding?"
+        />
+      </div>
+    </div>
+    <!-- Message Input -->
+    <div class="mb-6">
+      <label for="message" class="block text-gray-300 mb-2 font-medium">Message</label>
+      <div class="relative">
+        <textarea 
+          id="message" name="message" rows="4" required 
+          class="form-input"
+          placeholder="Your message here..."
+        ></textarea>
+      </div>
+    </div>
+    <!-- Hidden Fields for FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://mpaulvineeth.github.io/My_Portfolio/">
+    <input type="hidden" name="_autoresponse" value="Thank you for your message! I'll get back to you soon.">
+    <input type="hidden" name="_subject" value="New submission from Portfolio Contact Form">
+    
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      class="w-full py-3 px-4 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-lg transition duration-300 flex items-center justify-center">
+      <i class="fas fa-paper-plane mr-2"></i>Send Message
+    </button>
+  </form>
+</div>
+    </div>
+  </div>
+</section>
+    
+<!-- Footer -->
+<footer class="py-8 bg-dark border-t border-gray-800">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <h3 class="text-xl font-bold gradient-text mb-4">M Paul Vineeth Kumar</h3>
+        <p class="text-gray-400 mb-4">Computer Science Engineer and Full Stack Developer passionate about creating innovative solutions.</p>
+        <div class="flex space-x-3">
+          <a class="social-icon" href="https://www.linkedin.com/in/paul-vineeth-531336220/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a class="social-icon" href="https://github.com/MPaulVineeth" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="social-icon" href="https://mail.google.com/mail/?view=cm&to=mpaulvineeth2003@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a class="social-icon" href="tel:+917995476533" aria-label="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-violet-400 transition-colors">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-violet-400 transition-colors">About</a></li>
+          <li><a href="#technical-skills" class="text-gray-400 hover:text-violet-400 transition-colors">Skills</a></li>
+          <li><a href="#projects" class="text-gray-400 hover:text-violet-400 transition-colors">Projects</a></li>
+          <li><a href="#internships" class="text-gray-400 hover:text-violet-400 transition-colors">Internships</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Technical Skills</h3>
+        <ul class="space-y-2">
+          <li><a href="#technical-skills" class="text-gray-400 hover:text-violet-400 transition-colors">Web Development</a></li>
+          <li><a href="#technical-skills" class="text-gray-400 hover:text-violet-400 transition-colors">Programming Languages</a></li>
+          <li><a href="#technical-skills" class="text-gray-400 hover:text-violet-400 transition-colors">AI/ML</a></li>
+          <li><a href="#technical-skills" class="text-gray-400 hover:text-violet-400 transition-colors">Developer Tools</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Contact Info</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <i class="fas fa-envelope text-violet-400 mr-3"></i>
+            <a href="mailto:mpaulvineeth2003@gmail.com" class="text-gray-400 hover:text-violet-400 transition-colors">mpaulvineeth2003@gmail.com</span></a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-phone text-violet-400 mr-3"></i>
+            <a href="tel:+917995476533" class="text-gray-400 hover:text-violet-400 transition-colors">+91 7995476533</a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-map-marker-alt text-violet-400 mr-3"></i>
+            <span class="text-gray-400">Vellore, Tamil Nadu, India</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 pt-6 text-center">
+      <p class="text-gray-400">© 2025 M Paul Vineeth Kumar | All Rights Reserved.</p>
+      <p class="text-gray-500 text-sm mt-2">Designed with <i class="fas fa-heart text-red-500"></i> and modern web technologies</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="fixed bottom-6 right-6 bg-violet-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 opacity-0 invisible">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+<script>
+  // Initialize AOS
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  });
+</script>
+</body>
+</html>
